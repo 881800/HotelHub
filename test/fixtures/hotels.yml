@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  location: MyString
+  description: MyText
+  room_count: 1
+  amenities: MyText
+  price_per_night: 9.99
+
+two:
+  name: MyString
+  location: MyString
+  description: MyText
+  room_count: 1
+  amenities: MyText
+  price_per_night: 9.99
