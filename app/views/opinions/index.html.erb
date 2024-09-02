@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Opinions" %>
+
+<h1>Opinions</h1>
+
+<div id="opinions">
+  <% @opinions.each do |opinion| %>
+    <%= render opinion %>
+    <p>
+      <%= link_to "Show this opinion", opinion %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New opinion", new_opinion_path %>

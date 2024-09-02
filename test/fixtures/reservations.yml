@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  room: one
+  payment: one
+  check_in_date: 2024-09-02
+  check_out_date: 2024-09-02
+  status: MyString
+
+two:
+  user: two
+  room: two
+  payment: two
+  check_in_date: 2024-09-02
+  check_out_date: 2024-09-02
+  status: MyString

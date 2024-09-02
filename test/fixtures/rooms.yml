@@ -1,11 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  address: MyString
+  hotel: one
+  room_type: MyString
+  availability: false
+  price: 9.99
   description: MyText
 
 two:
-  name: MyString
-  address: MyString
+  hotel: two
+  room_type: MyString
+  availability: false
+  price: 9.99
   description: MyText

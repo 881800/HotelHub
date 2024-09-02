@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :opinions
+  resources :payments
+  resources :reservations
+  resources :rooms
+  resources :users
   resources :hotels
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
