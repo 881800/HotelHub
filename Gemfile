@@ -55,3 +55,12 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'devise'
+gem 'cancancan', '~> 3.0'
+gem 'sidekiq'
+gem 'redis'
+gem 'image_processing', '~> 1.2'
+gem 'bootstrap', '~> 5.3.3'
+gem "dartsass-sprockets"
+gem 'font-awesome-sass', '~> 5.15'

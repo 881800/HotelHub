@@ -74,14 +74,21 @@ GEM
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.2)
+    autoprefixer-rails (10.4.19.0)
+      execjs (~> 2)
     base64 (0.2.0)
+    bcrypt (3.1.20)
     bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
+    bootstrap (5.3.3)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 2.11.8, < 3)
     brakeman (6.2.1)
       racc
     builder (3.3.0)
+    cancancan (3.6.1)
     capybara (3.40.0)
       addressable
       matrix
@@ -94,16 +101,42 @@ GEM
     concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
     crass (1.0.6)
+    dartsass-sprockets (3.1.0)
+      railties (>= 4.0.0)
+      sassc-embedded (~> 1.69)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     date (3.3.4)
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    devise (4.9.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     drb (2.2.1)
     erubi (1.13.0)
+    execjs (2.9.1)
+    ffi (1.17.0-x64-mingw-ucrt)
+    ffi (1.17.0-x86_64-linux-gnu)
+    font-awesome-sass (5.15.1)
+      sassc (>= 1.11)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    google-protobuf (4.27.3-x64-mingw-ucrt)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.27.3-x86_64-linux)
+      bigdecimal
+      rake (>= 13)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
+    image_processing (1.13.0)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     importmap-rails (2.0.1)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
@@ -128,6 +161,7 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
+    mini_magick (4.13.2)
     mini_mime (1.1.5)
     minitest (5.25.1)
     msgpack (1.7.2)
@@ -145,12 +179,14 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     parallel (1.26.3)
     parser (3.3.4.2)
       ast (~> 2.4.1)
       racc
     pg (1.5.7)
     pg (1.5.7-x64-mingw-ucrt)
+    popper_js (2.11.8)
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
@@ -198,9 +234,16 @@ GEM
     rake (13.2.1)
     rdoc (6.7.0)
       psych (>= 4.0.0)
+    redis (5.3.0)
+      redis-client (>= 0.22.0)
+    redis-client (0.22.2)
+      connection_pool
     regexp_parser (2.9.2)
     reline (0.5.9)
       io-console (~> 0.5)
+    responders (3.1.1)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rexml (3.3.6)
       strscan
     rubocop (1.66.0)
@@ -232,7 +275,18 @@ GEM
       rubocop-performance
       rubocop-rails
     ruby-progressbar (1.13.0)
+    ruby-vips (2.2.2)
+      ffi (~> 1.12)
+      logger
     rubyzip (2.3.2)
+    sass-embedded (1.77.8-x64-mingw-ucrt)
+      google-protobuf (~> 4.26)
+    sass-embedded (1.77.8-x86_64-linux-gnu)
+      google-protobuf (~> 4.26)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-embedded (1.77.8)
+      sass-embedded (~> 1.77)
     securerandom (0.3.1)
     selenium-webdriver (4.24.0)
       base64 (~> 0.2)
@@ -240,6 +294,12 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sidekiq (7.3.2)
+      concurrent-ruby (< 2)
+      connection_pool (>= 2.3.0)
+      logger
+      rack (>= 2.2.4)
+      redis-client (>= 0.22.2)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -252,6 +312,7 @@ GEM
     stringio (3.1.1)
     strscan (3.1.0)
     thor (1.3.2)
+    tilt (2.4.0)
     timeout (0.4.1)
     turbo-rails (2.0.6)
       actionpack (>= 6.0.0)
@@ -263,6 +324,8 @@ GEM
       tzinfo (>= 1.0.0)
     unicode-display_width (2.5.0)
     useragent (0.16.10)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -283,16 +346,24 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bootstrap (~> 5.3.3)
   brakeman
+  cancancan (~> 3.0)
   capybara
+  dartsass-sprockets
   debug
+  devise
+  font-awesome-sass (~> 5.15)
+  image_processing (~> 1.2)
   importmap-rails
   jbuilder
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.2.1)
+  redis
   rubocop-rails-omakase
   selenium-webdriver
+  sidekiq
   sprockets-rails
   stimulus-rails
   turbo-rails

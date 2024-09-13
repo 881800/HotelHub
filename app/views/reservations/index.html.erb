@@ -1,16 +1,49 @@
-<p style="color: green"><%= notice %></p>
+<!-- app/views/admin/reservations/index.html.erb -->
+<div class="container mt-4">
+  <h2 class="text-center">Gestionar Reservas</h2>
 
-<% content_for :title, "Reservations" %>
-
-<h1>Reservations</h1>
-
-<div id="reservations">
-  <% @reservations.each do |reservation| %>
-    <%= render reservation %>
-    <p>
-      <%= link_to "Show this reservation", reservation %>
-    </p>
-  <% end %>
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">Ver y Administrar Todas las Reservas</h5>
+    </div>
+    <div class="card-body">
+      <% if @reservations.any? %>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Usuario</th>
+              <th>Hotel</th>
+              <th>Habitación</th>
+              <th>Fecha de Reserva</th>
+              <th>Fecha de Inicio</th>
+              <th>Fecha de Fin</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @reservations.each do |reservation| %>
+              <tr>
+                <td><%= reservation.id %></td>
+                <td><%= reservation.user.name %></td>
+                <td><%= reservation.hotel.name %></td>
+                <td><%= reservation.room.room_type %></td>
+                <td><%= reservation.created_at.strftime('%d/%m/%Y') %></td>
+                <td><%= reservation.start_date.strftime('%d/%m/%Y') %></td>
+                <td><%= reservation.end_date.strftime('%d/%m/%Y') %></td>
+                <td><%= reservation.status %></td>
+                <td>
+                  <%= link_to 'Ver', admin_reservation_path(reservation), class: "btn btn-info btn-sm" %>
+                  <%= link_to 'Eliminar', admin_reservation_path(reservation), method: :delete, data: { confirm: '¿Estás seguro de que deseas eliminar esta reserva?' }, class: "btn btn-danger btn-sm" %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <p class="text-center">No hay reservas para mostrar.</p>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New reservation", new_reservation_path %>

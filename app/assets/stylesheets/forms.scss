@@ -1,0 +1,36 @@
+@import "variables";
+
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: $font-family-base;
+  
+    label {
+      font-weight: bold;
+    }
+  
+    input[type="text"], input[type="password"], input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  
+    .btn-submit {
+      width: 100%;
+      padding: 10px;
+      background-color: $primary-color;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+  }
+  

@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <h2>Confirmación de Reserva</h2>
+
+  <div class="alert alert-success">
+    <p>¡Su reserva ha sido realizada con éxito!</p>
+    <p><strong>Número de Confirmación:</strong> <%= @reservation.confirmation_number %></p>
+    <p><strong>Fecha de Entrada:</strong> <%= @reservation.check_in %></p>
+    <p><strong>Fecha de Salida:</strong> <%= @reservation.check_out %></p>
+    <p><strong>Tipo de Habitación:</strong> <%= @room.name %></p>
+    <p><strong>Total Pagado:</strong> <%= number_to_currency(@reservation.total_price) %></p>
+  </div>
+
+  <p>Un correo electrónico de confirmación ha sido enviado a <%= @reservation.email %>.</p>
+  <%= link_to 'Añadir al Calendario', calendar_link(@reservation), class: 'btn btn-primary' %>
+</div>

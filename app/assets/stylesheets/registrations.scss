@@ -1,0 +1,90 @@
+@import "variables";
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/assets/hotel-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    .card {
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      padding: 40px;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+  
+      &:hover {
+        transform: translateY(-5px);
+      }
+  
+      h2 {
+        margin-bottom: 30px;
+        font-size: 2rem;
+        color: #333;
+        font-weight: 600;
+      }
+  
+      .form-label {
+        color: #444;
+        font-weight: 500;
+      }
+  
+      .form-control {
+        border-radius: 8px;
+        padding: 12px;
+        border: 1px solid #ddd;
+      }
+  
+      .btn-primary {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        background-color: #b38b59;
+        border: none;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #a57a48;
+        }
+      }
+  
+      .terms {
+        margin-top: 10px;
+        font-size: 0.8rem;
+        color: #666;
+  
+        a {
+          color: #b38b59;
+          text-decoration: none;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+  
+      .alternative-action {
+        text-align: center;
+        margin-top: 20px;
+  
+        a {
+          color: #b38b59;
+          text-decoration: none;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  

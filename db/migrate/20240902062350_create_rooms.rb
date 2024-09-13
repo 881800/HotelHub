@@ -6,6 +6,11 @@ class CreateRooms < ActiveRecord::Migration[7.2]
       t.boolean :availability
       t.decimal :price
       t.text :description
+      t.decimal :price_per_night
+      t.integer :beds
+      t.date :available_from
+      t.date :available_to
+      t.integer :guests
 
       t.timestamps
     end

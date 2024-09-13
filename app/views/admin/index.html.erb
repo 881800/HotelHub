@@ -1,0 +1,67 @@
+<div class="container mt-5">
+  <h2 class="text-center">Panel de Administración</h2>
+  
+  <div class="row mt-4">
+    <!-- Crear Hotel -->
+    <div class="col-md-3 mb-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <i class="fas fa-hotel fa-3x mb-3"></i>
+          <h5 class="card-title">Gestionar Hoteles</h5>
+          <p class="card-text">Agregar, editar o eliminar hoteles.</p>
+          <%= link_to 'Hoteles', admin_hotels_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gestionar Habitaciones -->
+    <div class="col-md-3 mb-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <i class="fas fa-bed fa-3x mb-3"></i>
+          <h5 class="card-title">Gestionar Habitaciones</h5>
+          <p class="card-text">Administrar las habitaciones de los hoteles.</p>
+          <%= link_to 'Habitaciones', admin_room_management_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gestionar Reservas -->
+    <div class="col-md-3 mb-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <i class="fas fa-calendar-alt fa-3x mb-3"></i>
+          <h5 class="card-title">Gestionar Reservas</h5>
+          <p class="card-text">Ver y administrar todas las reservas.</p>
+           <%= link_to "Reservations", user_reservations_path(current_user), class: "btn btn-primary" %> 
+        </div>
+      </div>
+    </div>
+
+    <!-- Gestionar Usuarios -->
+    <div class="col-md-3 mb-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <i class="fas fa-users fa-3x mb-3"></i>
+          <h5 class="card-title">Gestionar Usuarios</h5>
+          <p class="card-text">Ver y administrar usuarios registrados.</p>
+          <%= link_to 'Usuarios', users_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Gestionar Opiniones -->
+    <div class="col-md-3 mb-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <i class="fas fa-comments fa-3x mb-3"></i>
+          <h5 class="card-title">Gestionar Opiniones</h5>
+          <p class="card-text">Revisar y moderar opiniones de usuarios.</p>
+          <%= link_to 'Opiniones', opinions_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

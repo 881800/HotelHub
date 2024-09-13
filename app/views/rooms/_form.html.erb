@@ -1,42 +1,47 @@
-<%= form_with(model: room) do |form| %>
+<%= form_with(model: room, local: true) do |form| %>
   <% if room.errors.any? %>
-    <div style="color: red">
+    <div id="error_explanation">
       <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
 
       <ul>
-        <% room.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% room.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :hotel_id, style: "display: block" %>
-    <%= form.text_field :hotel_id %>
-  </div>
-
-  <div>
-    <%= form.label :room_type, style: "display: block" %>
+  <div class="field">
+    <%= form.label :room_type %>
     <%= form.text_field :room_type %>
   </div>
 
-  <div>
-    <%= form.label :availability, style: "display: block" %>
-    <%= form.check_box :availability %>
+  <div class="field">
+    <%= form.label :price_per_night %>
+    <%= form.number_field :price_per_night, step: 0.01 %>
   </div>
 
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
+  <div class="field">
+    <%= form.label :beds %>
+    <%= form.number_field :beds %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="field">
+    <%= form.label :available_from %>
+    <%= form.date_field :available_from %>
   </div>
 
-  <div>
+  <div class="field">
+    <%= form.label :available_to %>
+    <%= form.date_field :available_to %>
+  </div>
+
+  <div class="field">
+    <%= form.label :guests %>
+    <%= form.number_field :guests %>
+  </div>
+
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>

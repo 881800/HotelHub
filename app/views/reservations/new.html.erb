@@ -1,11 +1,36 @@
-<% content_for :title, "New reservation" %>
+<div class="container mt-5">
+  <h2>Confirmar Reserva</h2>
 
-<h1>New reservation</h1>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title"><%= @room.name %></h4>
+      <p class="card-text">Fecha de Entrada: <%= @reservation.check_in %></p>
+      <p class="card-text">Fecha de Salida: <%= @reservation.check_out %></p>
+      <p class="card-text">Número de Adultos: <%= @reservation.adults %></p>
+      <p class="card-text">Número de Niños: <%= @reservation.children %></p>
+      <p class="card-text">Precio Total: <%= number_to_currency(@reservation.total_price) %></p>
 
-<%= render "form", reservation: @reservation %>
-
-<br>
-
-<div>
-  <%= link_to "Back to reservations", reservations_path %>
+      <%= form_with model: @reservation, local: true do |f| %>
+        <div class="form-group">
+          <%= f.label :name, 'Nombre Completo' %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, 'Email' %>
+          <%= f.email_field :email, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :phone, 'Teléfono' %>
+          <%= f.telephone_field :phone, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :special_requests, 'Solicitudes Especiales' %>
+          <%= f.text_area :special_requests, class: 'form-control' %>
+        </div>
+        <div class="text-center">
+          <%= f.submit 'Confirmar Reserva', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

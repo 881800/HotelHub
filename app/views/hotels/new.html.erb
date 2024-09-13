@@ -1,11 +1,23 @@
-<% content_for :title, "New hotel" %>
+<%= form_with(model: @hotel, local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
 
-<h1>New hotel</h1>
+  <div class="form-group">
+    <%= form.label :address %>
+    <%= form.text_field :address, class: "form-control" %>
+  </div>
 
-<%= render "form", hotel: @hotel %>
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
 
-<br>
+  <div class="form-group">
+    <%= form.label :average_rating %>
+    <%= form.number_field :average_rating, step: 0.1, class: "form-control" %>
+  </div>
 
-<div>
-  <%= link_to "Back to hotels", hotels_path %>
-</div>
+  <%= form.submit "Create Hotel", class: "btn btn-primary" %>
+<% end %>

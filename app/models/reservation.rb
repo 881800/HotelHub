@@ -1,5 +1,5 @@
 class Reservation < ApplicationRecord
   belongs_to :user
   belongs_to :room
-  belongs_to :payment
+  has_one :payment
 end

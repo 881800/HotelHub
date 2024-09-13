@@ -1,0 +1,269 @@
+@import "bootstrap";
+@import "variables";  
+@import "header";     
+@import "footer";        
+@import "forms";         
+@import "rooms";          
+@import "reservations";   
+@import "sessions";
+@import "registrations";
+
+
+/* Google Font */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+p {
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/assets/hotel-background.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .card {
+    background-color: rgba(255, 255, 255, 0.8); 
+    backdrop-filter: blur(10px); 
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); 
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateY(-5px); 
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .form-label {
+      color: #444;
+      font-weight: 500;
+    }
+
+    .form-control {
+      border-radius: 8px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      margin: 5px;
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      background-color: #b38b59;
+      border: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      
+      &:hover {
+        background-color: #a57a48; 
+      }
+    }
+
+    .forgot-password-link {
+      text-align: right;
+      margin-top: 10px;
+      a {
+        color: #b38b59;
+        text-decoration: none;
+        font-size: 0.9rem;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .alternative-action {
+      text-align: center;
+      margin-top: 20px;
+      a {
+        color: #b38b59;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+
+/* Estilos del encabezado y pie de página */
+.navbar {
+    background-color: #f8f9fa;
+    .navbar-brand img {
+      max-height: 50px;
+    }
+  }
+  
+  .navbar-nav .nav-link {
+    color: #333;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #b38b59;
+  }
+  
+  footer {
+    background-color: #f8f9fa;
+    .btn-social {
+      margin: 0 5px;
+    }
+  }
+  
+
+  /* Estilos del formulario de búsqueda */
+  .search-form {
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    .form-control {
+      border-radius: 5px;
+    }
+  
+    .btn-primary {
+      background-color: #b38b59;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-weight: bold;
+  
+      &:hover {
+        background-color: #a57a48;
+      }
+    }
+  }
+  
+
+  /* Estilos de la página de detalles de una habitación */
+  .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    .card-img-top {
+      border-radius: 10px 10px 0 0;
+    }
+  
+    .card-body {
+      text-align: center;
+    }
+  
+    .btn-primary {
+      background-color: #b38b59;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-weight: bold;
+  
+      &:hover {
+        background-color: #a57a48;
+      }
+    }
+  }
+  
+  /* Estilos del formulario de búsqueda */
+  .filters-form {
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    .form-control {
+      border-radius: 5px;
+    }
+  
+    .btn-primary {
+      background-color: #b38b59;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-weight: bold;
+  
+      &:hover {
+        background-color: #a57a48;
+      }
+    }
+  }
+  
+  /* Estilos de la página de detalles de una habitación */
+
+  #room-gallery {
+    border-radius: 10px;
+  
+    .carousel-item img {
+      border-radius: 10px;
+    }
+  }
+  
+  .container {
+    .btn-primary {
+      background-color: #b38b59;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-weight: bold;
+  
+      &:hover {
+        background-color: #a57a48;
+      }
+    }
+  }
+  
+  /* Estilos de la página de reservas */
+
+  .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-primary {
+    background-color: #b38b59;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+  
+    &:hover {
+      background-color: #a57a48;
+    }
+  }
+  
+
+  .logo-img {
+    max-width: 300px; /* Ajusta el tamaño máximo de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    padding: 10px; /* Agrega un padding a la izquierda y derecha */
+  }
+  

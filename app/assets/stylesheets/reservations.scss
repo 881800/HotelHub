@@ -1,0 +1,26 @@
+@import "variables";
+.reservation-summary {
+    background-color: $background-color;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  
+    .reservation-details {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+  
+    .btn-confirm {
+      width: 100%;
+      padding: 15px;
+      background-color: $primary-color;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+  }
+  

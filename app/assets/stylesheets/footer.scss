@@ -1,0 +1,18 @@
+@import "variables";
+
+footer {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-family: $font-family-base;
+  
+    a {
+      color: #fff;
+      margin: 0 10px;
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+  

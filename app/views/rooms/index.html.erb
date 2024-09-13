@@ -1,16 +1,70 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mt-5">
+  <div class="row">
+    <!-- Filtros y búsqueda a la izquierda -->
+    <div class="col-md-4">
+      <div class="filters-search p-4 border rounded bg-light shadow-sm">
+        <h2 class="text-center">Buscar Habitaciones</h2>
+        <%= form_with url: hotel_rooms_path(@hotel), method: :get, local: true do |f| %>
+          <div class="form-group">
+            <%= f.label :check_in, 'Fecha de Entrada', class: 'font-weight-bold' %>
+            <%= f.date_field :check_in, class: 'form-control', placeholder: 'DD/MM/YYYY' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :check_out, 'Fecha de Salida', class: 'font-weight-bold' %>
+            <%= f.date_field :check_out, class: 'form-control', placeholder: 'DD/MM/YYYY' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :rooms, 'Habitaciones', class: 'font-weight-bold' %>
+            <%= f.number_field :rooms, class: 'form-control', min: 1 %>
+          </div>
+          <div class="form-group">
+            <%= f.label :adults, 'Adultos', class: 'font-weight-bold' %>
+            <%= f.number_field :adults, class: 'form-control', min: 1 %>
+          </div>
+          <div class="form-group">
+            <%= f.label :children, 'Niños', class: 'font-weight-bold' %>
+            <%= f.number_field :children, class: 'form-control', min: 0 %>
+          </div>
+          <div class="form-group">
+            <%= f.label :price, 'Rango de Precio', class: 'font-weight-bold' %>
+            <div class="input-group">
+              <%= f.number_field :min_price, placeholder: 'Mínimo', class: 'form-control' %>
+              <%= f.number_field :max_price, placeholder: 'Máximo', class: 'form-control' %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :type, 'Tipo de Habitación', class: 'font-weight-bold' %>
+            <%= f.select :type, options_for_select(['Individual', 'Doble', 'Suite']), { include_blank: 'Selecciona un tipo' }, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :amenities, 'Servicios', class: 'font-weight-bold' %>
+            <%= f.select :amenities, options_for_select(['Wi-Fi', 'Aire Acondicionado', 'Piscina', 'Gimnasio']), { include_blank: 'Selecciona un servicio' }, class: 'form-control' %>
+          </div>
+          <div class="text-center">
+            <%= f.submit 'Buscar', class: 'btn btn-primary btn-lg mt-3' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
-<% content_for :title, "Rooms" %>
-
-<h1>Rooms</h1>
-
-<div id="rooms">
-  <% @rooms.each do |room| %>
-    <%= render room %>
-    <p>
-      <%= link_to "Show this room", room %>
-    </p>
-  <% end %>
+    <!-- Habitaciones disponibles a la derecha -->
+    <div class="col-md-8">
+      <h2 class="text-center mb-4">Habitaciones Disponibles</h2>
+      <div class="row">
+        <% @rooms.each do |room| %>
+          <div class="col-md-6 mb-4">
+            <div class="card shadow-sm">
+               <!-- Asegúrate de tener imágenes de las habitaciones -->
+              <div class="card-body">
+                <h5 class="card-title text-primary"><%= room.description %></h5>
+                <p class="card-text"><%= room.description %></p>
+                <p class="card-text text-muted">Precio por Noche: <%= number_to_currency(room.price) %></p>
+                
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New room", new_room_path %>

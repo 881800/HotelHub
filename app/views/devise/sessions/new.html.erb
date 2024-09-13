@@ -1,0 +1,40 @@
+<% if flash[:alert] %>
+  <div class="alert alert-danger">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<% if flash[:notice] %>
+  <div class="alert alert-info">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<div class="auth-container">
+  <div class="card">
+    <h2>Iniciar Sesión</h2>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { method: :post }) do |f| %>
+      <div class="form-group">
+        <%= f.label :email, class: 'form-label' %>
+        <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, class: 'form-label' %>
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit 'Iniciar Sesión', class: 'btn-primary' %>
+      </div>
+
+      <div class="forgot-password-link">
+        <%= link_to '¿Olvidaste tu contraseña?', new_user_password_path %>
+      </div>
+
+      <div class="alternative-action">
+        <%= link_to '¿No tienes una cuenta? Regístrate', new_user_registration_path %>
+      </div>
+    <% end %>
+  </div>
+</div>
